@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Réservation</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="index.html">
+            <div class="navbar-container">
+                <div class="navbar-zonne1">
+                    <svg width="44" height="49" viewBox="0 0 44 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.36693 14.0157C1.22568 15.9136 0 18.6378 0 21.4991V43.5C0 46.2614 2.23858 48.5 5 48.5H9V31C9 26.5817 12.5817 23 17 23H27C31.4183 23 35 26.5817 35 31V48.5H39C41.7614 48.5 44 46.2614 44 43.5V21.4991C44 18.6378 42.7743 15.9136 40.6331 14.0157L28.6331 3.37932C24.8475 0.0239424 19.1525 0.0239413 15.3669 3.37932L3.36693 14.0157ZM30 48.5V31C30 29.3431 28.6569 28 27 28H17C15.3431 28 14 29.3431 14 31V48.5H30Z" class="fill-variable"/>
+                    </svg>
+                </div>
+            </a>
+            <div class="navbar-zonne2">
+                <h4>TURTING</h4>
+            </div>
+            <a href="index.html">
+                <div class="navbar-zonne3">
+                    <svg id="Calque_5" data-name="Calque 5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1119.1915 1302.1622">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: url(#Dégradé_sans_nom_14);
+                                }
+
+                                .cls-1, .cls-2, .cls-3 {
+                                    stroke-width: 0px;
+                                }
+
+                                .cls-2 {
+                                    fill: url(#Dégradé_sans_nom_12);
+                                }
+
+                                .cls-3 {
+                                    fill: url(#Dégradé_sans_nom_13);
+                                }
+                            </style>
+                            <linearGradient id="Dégradé_sans_nom_12" data-name="Dégradé sans nom 12" x1="1027.9929" y1="-1725.791" x2="-98.3019" y2="-399.0722" gradientTransform="translate(0 -344) scale(1 -1)" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#6f4df8"/>
+                                <stop offset=".4561" stop-color="#9a76f3"/>
+                                <stop offset="1" stop-color="#ee6ad9"/>
+                            </linearGradient>
+                            <linearGradient id="Dégradé_sans_nom_13" data-name="Dégradé sans nom 13" x1="587.6213" y1="-314.6197" x2="1205.7658" y2="-910.0038" gradientTransform="translate(0 -344) scale(1 -1)" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#834df6"/>
+                                <stop offset="1" stop-color="#d54df6"/>
+                            </linearGradient>
+                            <linearGradient id="Dégradé_sans_nom_14" data-name="Dégradé sans nom 14" x1="566.2734" y1="-877.5095" x2="566.2734" y2="-935.1176" gradientTransform="translate(0 -344) scale(1 -1)" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#834df6"/>
+                                <stop offset="1" stop-color="#834df6"/>
+                            </linearGradient>
+                        </defs>
+                        <g id="Calque_4" data-name="Calque 4">
+                            <path class="cls-2" d="m1119.1915,755.4768c0,117.0832-10.6844,202.5585-75.236,301.8344-103.7277,159.821-300.4989,244.851-489.702,244.851s-389.5356-85.03-489.702-248.4124C11.1296,965.1581,0,883.2445,0,780.4069v-471.8946C0,187.8675,98.8307,89.4819,220.3659,89.4819h6.2326c121.5351,0,220.3658,97.9404,220.3658,219.0304v351.2498c0,77.9073,3.5615,230.6052,110.8507,230.6052,135.781,0,110.8507-212.7977,110.8507-298.273v-58.3191h230.16c121.5351,0,220.3659,100.6115,220.3659,221.7015Z"/>
+                        </g>
+                        <g id="Calque_3" data-name="Calque 3">
+                            <path class="cls-3" d="m861.8753,469.2236c130.4387,0,235.9473-105.0634,235.9473-234.6118S991.869,0,861.8753,0s-235.9473,105.0634-235.9473,234.6118c0,129.9937,105.5086,234.6118,235.9473,234.6118Z"/>
+                        </g>
+                        <g id="Calque_2" data-name="Calque 2">
+                            <path class="cls-1" d="m539.1172,533.33h72.5649v38.2999c0,10.5655-8.0133,19.37-18.2526,19.37h-54.3124c-9.794,0-18.2526-8.8046-18.2526-19.37v-19.37c0-10.1253,8.4585-18.9299,18.2526-18.9299Z"/>
+                        </g>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h1>Reservation interne</h1>
+    <div class="element fade-in-up">
+        <section>
+            <div class="card-container">
+                <div class="card">
+                    <h2>Nom</h2>
+                    <input type="text" id="name"></input>
+                    <h2>Date</h2>
+                    <input type="date" id="date"></input>
+                    <h2>Heure</h2>
+                    <div class="service-container">
+                        <button class="selecter-serv" onclick="selectTime('12:00')">12:00</button>
+                        <button class="selecter-serv" onclick="selectTime('13:00')">13:00</button>
+                        <button class="selecter-serv" onclick="selectTime('19:00')">19:00</button>
+                        <button class="selecter-serv" onclick="selectTime('20:00')">20:00</button>
+                    </div>
+                    <h2>Nombre de personnes</h2>
+                    <input type="number" id="numberOfPeople"></input>
+                    <button class="submit-btn" onclick="validateForm()">Réserver</button>
+                    <div id="confirmationMessage"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let selectedTime = '';
+
+            function selectTime(time) {
+                selectedTime = time;
+                document.querySelectorAll('.selecter-serv').forEach(button => button.classList.remove('active'));
+                document.querySelector(`button[onclick="selectTime('${time}')"]`).classList.add('active');
+            }
+
+            window.selectTime = selectTime;
+
+            function validateForm() {
+                const name = document.getElementById('name').value;
+                const date = document.getElementById('date').value;
+                const numberOfPeople = document.getElementById('numberOfPeople').value;
+
+                if (!name || !date || !selectedTime || !numberOfPeople) {
+                    alert("Merci de renseigner tous les champs et de choisir une heure pour finaliser votre réservation.");
+                    return false;
+                }
+
+                submitForm(name, date, numberOfPeople, selectedTime);
+            }
+
+            window.validateForm = validateForm;
+
+            function submitForm(name, date, numberOfPeople, time) {
+                const data = {
+                    name: name,
+                    date: date,
+                    time: time,
+                    numberOfPeople: numberOfPeople
+                };
+
+                fetch('https://hook.eu2.make.com/idymrk3c6tnavdc7pabii8vn4euzbmxn', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('.submit-btn').textContent = 'OK !';
+                    setTimeout(() => {
+                        location.reload();
+                    }, 2000); // Attendre 2 secondes avant de recharger la page
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    document.querySelector('.submit-btn').textContent = 'OK !';
+                    setTimeout(() => {
+                        location.reload();
+                    }, 2000); // Attendre 2 secondes même en cas d'erreur
+                });
+            }
+
+            function addActiveClass() {
+                const elements = document.querySelectorAll('.fade-in-up');
+                elements.forEach((element) => {
+                    element.classList.add('active');
+                });
+            }
+
+            addActiveClass(); // Ajouter l'animation au chargement de la page
+        });
+    </script>
+</body>
+</html>

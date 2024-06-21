@@ -1,0 +1,305 @@
+:root {
+  /* Pour le theme clair */
+  --Blanc-clair: #f9f9f9;
+  --Blanc-moins-clair: #f3f3f3;
+  --Blanc-foncé: #f0f0f0;
+  --Blanc-over: #eeeeee;
+  --Noir: #232323;
+  /* Pour le theme dark */
+  --Noir-foncé: #1c1c1c;
+  --Noir-gris: #222222;
+  --Noir-clair: #2b2b2c;
+  --Noir-over: #323232;
+  --Blanc: #f9f9f9;
+  /* Pour tout les themes */
+  --Bleu: #3e34f7;
+}
+:root {
+  /* Pour le theme clair */
+  --Background: var(--Blanc-foncé);
+  --Background-card: var(--Blanc-moins-clair);
+  --Background-bouton: var(--Blanc-clair);
+  --Background-bouton-over: var(--Blanc-over);
+  --Color-text: var(--Noir);
+  --Active-bouton: var(--Noir);
+  --Active-texte: var(--Blanc);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Pour le theme dark */
+    --Background: var(--Noir-foncé);
+    --Background-card: var(--Noir-gris);
+    --Background-bouton: var(--Noir-clair);
+    --Background-bouton-over: var(--Noir-over);
+    --Color-text: var(--Blanc);
+    --Active-bouton: var(--Blanc);
+    --Active-texte: var(--Noir);
+  }
+}
+
+/* SVG theme adaptations */
+.fill-variable {
+  fill: var(--Color-text);
+}
+.fill-noir-variable {
+  fill: var(--Background-card);
+}
+.strok-variable {
+  stroke: var(--Color-text);
+}
+/* Load annimation */
+/* Animation pour l'opacité et la position */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe initiale sans opacité et en position basse */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* Classe pour appliquer l'animation */
+.fade-in-up.active {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* Géneral */
+body {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "roboto", sans-serif, bold;
+  background: var(--Background);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 5%;
+  padding: 0px;
+  text-align: center;
+}
+h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--Color-text);
+}
+a {
+  text-decoration: none;
+}
+/* Nav-bar */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.navbar-container {
+  display: flex;
+  padding-inline: 5%;
+  margin-top: 5px;
+  width: 100%;
+  max-width: 1140px;
+  justify-content: space-between;
+  border-radius: 20px 20px 40px 40px;
+  background-color: var(--Background-bouton);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+.navbar-zonne1,
+.navbar-zonne2,
+.navbar-zonne3 {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  width: 100%;
+  min-width: 60px;
+  height: 70px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+.navbar-zonne1 {
+  justify-content: left;
+}
+.navbar-zonne2 {
+  justify-content: center;
+}
+.navbar-zonne3 {
+  justify-content: right;
+}
+.navbar-zonne1 svg {
+  transition: ease-in-out 0.1s;
+}
+.navbar-zonne1:hover svg {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+svg {
+  height: 30px;
+  padding: 5px;
+}
+/* Accueil */
+.acceuil-item-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Responsive columns */
+  gap: 20px;
+  padding: 5px;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+.acceuil-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 20px;
+  background-color: var(--Background-card);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: ease-in-out 0.2s; /* Optionnel : ombre pour un effet de carte */
+}
+.acceuil-item:hover svg {
+  transform: scale(1.2) translateY(-15px);
+}
+.acceuil-item:hover {
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+}
+/* Styles pour les éléments enfants */
+.acceuil-item svg {
+  width: 50px; /* Ajustez selon vos besoins */
+  height: 50px; /* Ajustez selon vos besoins */
+  margin-bottom: 10px;
+  transition: ease-out 0.2s;
+}
+.acceuil-item h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* General */
+.card-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
+  padding: 0px;
+  margin: 5px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: clamp(300px, 100%, 800px);
+  height: fit-content;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: var(--Background-card);
+  box-shadow: 0px 1px 20px rgba(4, 0, 0, 0.1);
+}
+input[type="date"],
+input[type="number"],
+input[type="text"] {
+  text-align: center;
+  justify-content: center;
+  width: calc(100%-10px);
+  height: 70px;
+  margin-top: 10px;
+  padding-inline: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  background: var(--Background-bouton);
+  color: var(--Color-text);
+  box-shadow: 0px 1px 4px rgba(4, 0, 0, 0.05);
+}
+.submit-btn {
+  justify-content: center;
+  margin-top: 10px;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  width: 100%;
+  height: 70px;
+  background: var(--Bleu);
+  color: var(--Blanc);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.submit-btn:hover {
+  font-size: 22px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+}
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5px;
+  margin-top: 5px;
+}
+.selecter-serv {
+  text-align: center;
+  padding: 20px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  color: var(--Color-text);
+  background: var(--Background-bouton);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: ease-in-out 0.2s;
+}
+.selecter-serv.active {
+  transform: scale(1.03);
+  background-color: var(--Active-bouton);
+  color: var(--Active-texte);
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25);
+}
+
+/* Afficheur de resultats */
+.vmr-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5px;
+  margin-top: 5px;
+  background: var(--Background-card);
+  border-radius: 10px;
+}
+.VMR-serv {
+  border-radius: 10px;
+  padding: 5px;
+  background: var(--Background-bouton);
+  box-shadow: 0px 1px 4px rgba(4, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.VMR-serv:hover {
+  transform: scale(1.02);
+}
